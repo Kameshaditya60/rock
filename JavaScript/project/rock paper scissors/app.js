@@ -1,8 +1,11 @@
 let userScore = 0;
 let compScore = 0;
+let userChoice;
+
 
 const msg = document.querySelector("#msg");
-const userScorePara = document.querySelector("#")
+const userScorePara = document.querySelector("#user-score");
+const compScorePara = document.querySelector("#comp-score");
 
 const genCompChoice = () => {
     //rock paper scissor
@@ -17,14 +20,19 @@ const drawGame = () => {
     msg.style.backgroundColor = "rgb(66, 8, 120)";
 }
 
-const winMsg = (userWin) => {
+const winMsg = (userWin,userChoice,compChoice) => {
+
     if (userWin) {
+        userScore++;
+        userScorePara.innerText = userScore;
         console.log("*** You Win ***");
         msg.innerText = `*** You Win *** Your ${userChoice} beats ${compChoice}`;
         msg.style.backgroundColor = "green";
     } else {
+        compScore++;
+        compScorePara.innerText = compScore;
         console.log("*** Computer Win ***");
-        msg.innerText = `*** Computer Win ***  ${compChoice} beats Your ${userScore}`;
+        msg.innerText = `*** Computer Win ***  ${compChoice} beats Your ${userChoice}`;
         msg.style.backgroundColor = "red";
     }
 };
@@ -48,7 +56,7 @@ const playGame = (userChoice) => {
             userWin = compChoice === "rock" ? false : true;
         }
 
-        winMsg(userWin);
+        winMsg(userWin,userChoice,compChoice);
     }
 }
 

@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
         <h1>Rock paper Scissors</h1>
     </div>
-    <div>
-        <div>
-            <img src="" alt="">
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="img/rock.jpeg" alt="rock">
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="choice" id="paper">
+            <img src="img/paper.jpg" alt="paper">
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="choice" id="scissors">
+            <img src="img/scissors.jpeg" alt="scissors">
         </div>
     </div>
-    
+    <div class="score-board">
+        <div class="user-score">
+            <h2 id="user-score">0</h2>
+            <p>You</p>
+        </div>
+        <div class="comp-score">
+            <h2 id="comp-score">0</h2>
+            <p>Comp</p>
+        </div>
+    </div>
+    <div class="msg-container">
+        <p id="msg">Start your move </p>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
